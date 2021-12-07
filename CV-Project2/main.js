@@ -17,7 +17,7 @@ camera.position.setZ(30);
 renderer.render(scene,camera);
 
 const geometry = new THREE.TorusGeometry(10,3,16,100)
-const material = new THREE.MeshStandardMaterial({color:0xFF6347});
+const material = new THREE.MeshBasicMaterial({color:0xC0C0C0, wireframe:true  });
 const torus = new THREE.Mesh(geometry,material);
 
 scene.add(torus)
@@ -44,7 +44,22 @@ function addStar(){
    scene.add(star)
 }
 
-Array(450).fill().forEach(addStar)
+
+Array(150).fill().forEach(addStar)
+
+
+const player = new THREE.TextureLoader().load('20210930_204502(1).jpg')
+const N = new  THREE.Mesh(
+  new THREE.BoxGeometry(3,3,3),
+  new THREE.MeshBasicMaterial({map:player})
+);
+
+scene.add(N);
+
+
+
+const backTexture = new THREE.TextureLoader().load('pexels-alex-andrews-5086477.jpg');
+scene.background = backTexture;
 
 function animate()
 {
