@@ -72,5 +72,17 @@ function animate()
   
   renderer.render(scene, camera);
 }
+function moveCam(){
+  const t = document.body.getBoundingClientRect().top;
+  N.rotation.x +=0.05;
+  N.rotation.z += 0.01;
+
+  camera.position.z = t*-0.01;
+  camera.position.x = t*-0.0002;
+  camera.position.y = t*-0.0002;
+
+}
+document.body.onscroll = moveCam()
+
 
 animate()
