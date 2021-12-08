@@ -82,7 +82,7 @@ function moveCam(){
   camera.position.y = t*-0.0002;
 
 }
-document.body.onscroll = moveCam()
+document.body.onscroll = moveCam
 
 
 animate()
